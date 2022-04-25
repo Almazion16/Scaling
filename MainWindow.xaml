@@ -1,0 +1,34 @@
+﻿<Window x:Class="Gamma.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gamma"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="508.342" Width="1420.333" Background="#FF767676">
+    <Grid>
+        <TextBox x:Name="StartText" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="290" TextWrapping="Wrap" VerticalAlignment="Top" Width="330" Margin="10,25,0,0" PreviewTextInput="StartText_PreviewTextInput" DataObject.Pasting="StartText_Pasting"/>
+        <TextBox x:Name="BinaryStartText" IsReadOnly="True" HorizontalAlignment="Left" Height="290" TextWrapping="Wrap" VerticalAlignment="Top" Width="330" Margin="362,25,0,0"/>
+        <TextBox x:Name="KeyBox" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Margin="80,340,0,0" PreviewTextInput="KeyBox_PreviewTextInput" DataObject.Pasting="KeyBox_Pasting" PreviewKeyDown="KeyBox_PreviewKeyDown" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Исходный текст" VerticalAlignment="Top" Margin="10,2,0,0" Width="330" TextAlignment="Center" FontSize="16" Height="18"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Исходный текст в бинарном виде" VerticalAlignment="Top" Margin="362,3,0,0" Width="330" TextAlignment="Center" FontSize="16"/>
+        <TextBox x:Name="BinaryResultText" IsReadOnly="True" HorizontalAlignment="Left" Height="290" TextWrapping="Wrap" VerticalAlignment="Top" Width="330" Margin="712,25,0,0"/>
+        <TextBox x:Name="StartResultText" IsReadOnly="True" HorizontalAlignment="Left" Height="290" TextWrapping="Wrap" VerticalAlignment="Top" Width="330" Margin="1066,25,0,0"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Расшифрованный текст" VerticalAlignment="Top" Margin="1066,2,0,0" Width="330" TextAlignment="Center" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Зашифрованный текст в бинарном виде" VerticalAlignment="Top" Margin="712,2,0,0" Width="330" TextAlignment="Center" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ключ:" VerticalAlignment="Top" Margin="10,340,0,0" Height="27" Width="65" FontSize="18"/>
+        <Button x:Name="GenerateKey" Content="Генерация ключа" HorizontalAlignment="Left" VerticalAlignment="Top" Width="326" Margin="10,408,0,0" Height="34" FontSize="20" Click="GenerateKey_Click"/>
+        <TextBox IsReadOnly="True" HorizontalScrollBarVisibility="Visible" x:Name="KeyBlock"  HorizontalAlignment="Left" TextWrapping="NoWrap" VerticalAlignment="Top" Margin="362,320,0,0" Width="330" Background="White" FontSize="20"/>
+        <CheckBox x:Name="En" Content="En" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="90,317,0,0" Height="21" Width="75" FontSize="16" Checked="En_Checked"/>
+        <CheckBox x:Name="Ru" IsChecked="True" Content="Ru" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,317,0,0" Height="21" Width="75" FontSize="16" Checked="Ru_Checked"/>
+        <Button x:Name="Crypt" Content="Зашифровать" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="547,394,0,0" Height="37" FontSize="18" Click="Crypt_Click" />
+        <Button x:Name="Decrypt" Content="Расшифровать" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="712,394,0,0" Height="37" FontSize="18" Click="Decrypt_Click"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="*заданный ключ" VerticalAlignment="Top" Margin="362,367,0,0" Width="330" Height="20"/>
+        <Button x:Name="Clear" Content="Очистить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="882,394,0,0" Height="37" Click="Clear_Click" FontSize="18" />
+        <ComboBox x:Name="KeyType" SelectedIndex="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="326" Margin="10,372,0,0" FontSize="18" SelectionChanged="ComboBox_SelectionChanged">
+            <TextBlock>Бинарный ключ</TextBlock>
+            <TextBlock>Буквы+цифры</TextBlock>
+        </ComboBox>
+
+    </Grid>
+</Window>
